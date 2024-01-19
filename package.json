@@ -1,0 +1,28 @@
+{
+  "name": "clase_3_api_rest_db_ts",
+  "version": "0.0.1",
+  "description": "API REST With data in DB",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev src/index.ts",
+    "build": "node build/index.js",
+    "run": "tsc"
+  },
+  "keywords": [],
+  "author": "Joaquin 'La Pulga' Gonzalez",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "4.17.18",
+    "@types/morgan": "1.9.6",
+    "@types/cors": "2.8.14",
+    "@types/mysql2": "github:types/mysql2",
+    "ts-node-dev": "2.0.0",
+    "typescript": "5.2.2"
+  },
+  "dependencies": {
+    "express": "4.18.2",
+    "cors": "2.8.5",
+    "morgan": "1.10.0",
+    "mysql2": "3.6.1"
+  }
+}
