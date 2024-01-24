@@ -2,15 +2,15 @@ import { Router } from 'express'
 
 import controller from '../controllers/products.controller'
 
-const productsRoutes = Router()
+const commentsRoutes = Router()
 
-productsRoutes.route('/')
+commentsRoutes.route('/')
     .get(controller.getAll)
     .post(controller.create)
 
-productsRoutes.route('/:id')
+commentsRoutes.route('/:id')
     .get(controller.getEntry)
     .delete(controller.deleteEntry)
     .post(controller.updateEntry)
 
-export default productsRoutes
+export default commentsRoutes

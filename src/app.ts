@@ -3,6 +3,8 @@ import morgan from 'morgan'
 
 import categoriesRoutes from './Routes/categories.routes'
 import productsRoutes from './Routes/products.routes'
+import userRoutes from './Routes/user.routes'
+import commentsRoutes from './Routes/comments.routes'
 
 class App {
   private App: Application
@@ -24,8 +26,10 @@ class App {
   }
 
   Routes() {
-    this.App.use('/categories', categoriesRoutes)
+    this.App.use('/users', userRoutes)
     this.App.use('/products', productsRoutes)
+    this.App.use('/categories', categoriesRoutes)
+    this.App.use('/comments', commentsRoutes)
   }
 
   async Listen() {
