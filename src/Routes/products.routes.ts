@@ -11,6 +11,6 @@ productsRoutes.route('/')
 productsRoutes.route('/:id')
     .get(controller.getEntry)
     .delete(controller.deleteEntry)
-    .post(controller.updateEntry)
+    .put(controller.updateEntry)
 
 export default productsRoutes

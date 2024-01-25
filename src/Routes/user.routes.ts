@@ -1,6 +1,6 @@
 import { Router } from 'express'
 
-import controller from '../controllers/products.controller'
+import controller from '../controllers/users.controller'
 
 const userRoutes = Router()
 
@@ -11,6 +11,6 @@ userRoutes.route('/')
 userRoutes.route('/:id')
     .get(controller.getEntry)
     .delete(controller.deleteEntry)
-    .post(controller.updateEntry)
+    .put(controller.updateEntry)
 
 export default userRoutes

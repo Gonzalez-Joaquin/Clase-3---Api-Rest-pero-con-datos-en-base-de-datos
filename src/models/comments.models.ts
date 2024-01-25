@@ -1,6 +1,6 @@
 export interface Comment {
     idComment: number,
     commment: string,
-    idProduct: string
-    idUser: string,
+    Product_id: number
+    User_id: number,
 }

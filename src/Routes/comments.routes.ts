@@ -1,8 +1,8 @@
 import { Router } from 'express'
 
-import controller from '../controllers/products.controller'
+import controller from '../controllers/comments.controller'
 
-const commentsRoutes = Router()
+const commentsRoutes = Router()    
 
 commentsRoutes.route('/')
     .get(controller.getAll)
@@ -11,6 +11,6 @@ commentsRoutes.route('/')
 commentsRoutes.route('/:id')
     .get(controller.getEntry)
     .delete(controller.deleteEntry)
-    .post(controller.updateEntry)
+    .put(controller.updateEntry)
 
 export default commentsRoutes
