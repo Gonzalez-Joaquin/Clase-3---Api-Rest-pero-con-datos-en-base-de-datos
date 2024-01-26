@@ -13,4 +13,7 @@ userRoutes.route('/:id')
     .delete(controller.deleteEntry)
     .put(controller.updateEntry)
 
+userRoutes.route('/login')
+    .post(controller.loginWithUsernameAndPassword)
+
 export default userRoutes

@@ -1,4 +1,4 @@
-export interface User {
+export default interface User {
     id: number,
     name: string,
     username: string
@@ -6,3 +6,5 @@ export interface User {
     password: string
     permissions: 'user' | 'admin'
 }
+
+export type UsernameAndPassowrdModel = Pick<User, 'username' | 'password'>
