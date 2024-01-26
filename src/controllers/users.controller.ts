@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 
 import getConnection from '../db/database'
-import loginWithEmailAndPasswordUtils from '../utils/loginWithEmailAndPasswordUtils'
+import loginWithEmailAndPasswordUtils from '../utils/loginWithEmailAndPassword.utils'
 import User from '../models/users.models'
 
 

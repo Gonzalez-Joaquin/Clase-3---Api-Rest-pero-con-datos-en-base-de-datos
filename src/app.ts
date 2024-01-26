@@ -5,6 +5,7 @@ import categoriesRoutes from './Routes/categories.routes'
 import productsRoutes from './Routes/products.routes'
 import userRoutes from './Routes/user.routes'
 import commentsRoutes from './Routes/comments.routes'
+import cartRoutes from './Routes/cart.routes'
 
 class App {
   private App: Application
@@ -30,6 +31,7 @@ class App {
     this.App.use('/products', productsRoutes)
     this.App.use('/categories', categoriesRoutes)
     this.App.use('/comments', commentsRoutes)
+    this.App.use('/cart', cartRoutes)
   }
 
   async Listen() {
