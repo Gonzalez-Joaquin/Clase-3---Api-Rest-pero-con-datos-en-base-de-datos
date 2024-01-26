@@ -14,5 +14,12 @@ export const addElement = (product: Products, quantity: number = 1) => {
 }
 
 export const getElements =  () => {
-    return cart
+    const stockCart = cart.find((element) => element.stock < 1)
+
+    if(stockCart){
+        return false
+    }
+    else {
+        return cart  
+    }
 }

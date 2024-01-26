@@ -21,7 +21,11 @@ const addToCart = async (req: Request, res: Response) => {
 const getAllElementsToCart = async (_req: Request, res: Response) => {
     try {
         const cart = await getElements()
-        return cart
+        if(cart === false){
+            return res.json({message: 'Stock insuficiente en alguno de los productos'})
+        } else{
+            return cart
+        }
     }
     catch (err: any) {
         return res.sendStatus(400).json({message: 'Ups, ocurrió un error', err})
