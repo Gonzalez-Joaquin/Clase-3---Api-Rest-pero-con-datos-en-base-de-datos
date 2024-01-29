@@ -42,3 +42,26 @@ const Arreglo = []
 Array.isArray(Arreglo) // true
 Array.isArray(noArreglo) // false
 ```
+
+# Real Time Updating
+
+## HTTP Polling - Server Sent Events - WebSocket
+
+### Http Polling
+
+Es el caso en el que el cliente realiza solicitudes periódicas al servidor.
+
+`Cliente -> Servidor`
+
+### SSE ( Server Sent Events )
+
+Permite al servidor que envíe datos al cliente de manera asincrónica
+
+`Servidor -> Cliente`
+
+### Web Socket ( En mi caso socket.io )
+
+Permite una comunicación en tiempo real tanto del cliente al servidor como del servidor al cliente.
+
+`Servidor -> Cliente`
+`Cliente -> Servidor`

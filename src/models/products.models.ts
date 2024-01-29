@@ -5,7 +5,6 @@ export interface Products {
   description: string
   price: number
   stock: number
-  quantity: number
   type: "product" | "service"
   category_id: number
 }

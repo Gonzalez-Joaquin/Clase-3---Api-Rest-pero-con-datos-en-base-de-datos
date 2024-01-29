@@ -1,35 +1,19 @@
 import { Request, Response } from 'express'
+import getConnection from '../db/database'
 
-import { addElement, getElements } from '../utils/cartOfPay.utils'
+import esPosibleUtil from '../utils/esPosibleUtil'
+import { Products } from '../models/products.models'
 
-const addToCart = async (req: Request, res: Response) => {
+const esPosible = async (req: Request, res: Response) => {
     try {
-        const {product_id, quantity} = req.body
-
-        if(!product_id || !quantity || quantity < 1){
-            return res.sendStatus(400).json({message: 'Error. Parámetros inválidos'})
-        }
-        
-        await addElement(product_id, quantity)
-        return res.json({message: 'Se agregó un producto al carrito'})
+        const connection = await getConnection()
+        const allProducts = await connection.query('SELECT * FROM `products`')
+        const response = esPosibleUtil(req.body, allProducts[0] as Array<Products>)
+        return res.json(response)
     }
     catch (err: any) {
-        return res.sendStatus(400).json({message: 'Ups, ocurrió un error', err})
+        return res.sendStatus(400).json({ message: 'Ups, ocurrió un error', err })
     }
 }
 
-const getAllElementsToCart = async (_req: Request, res: Response) => {
-    try {
-        const cart = await getElements()
-        if(cart === false){
-            return res.json({message: 'Stock insuficiente en alguno de los productos'})
-        } else{
-            return cart
-        }
-    }
-    catch (err: any) {
-        return res.sendStatus(400).json({message: 'Ups, ocurrió un error', err})
-    }
-}
-
-export default { addToCart, getAllElementsToCart }
+export default { esPosible }

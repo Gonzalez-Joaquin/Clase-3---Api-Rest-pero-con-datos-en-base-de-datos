@@ -5,7 +5,6 @@ import controller from '../controllers/cart.controller'
 const cartRoutes = Router()
 
 cartRoutes.route('/')
-    .get(controller.getAllElementsToCart)
-    .post(controller.addToCart)
+    .post(controller.esPosible)
 
 export default cartRoutes
