@@ -7,11 +7,11 @@
 > El `+` significa que tiene todo hecho.
 > El `x` significa que no tiene nada hecho.
 
--   [ - ] Catálogo de productos: Permite mostrar los productos o servicios que ofrece el negocio, con descripciones, imágenes y precios.
+-   [ + ] Catálogo de productos: Permite mostrar los productos o servicios que ofrece el negocio, con descripciones, imágenes y precios.
 
--   [ X ] Carrito de compras: Permite a los usuarios seleccionar productos y gestionar sus compras antes de realizar el pago.
+-   [ + ] Carrito de compras: Permite a los usuarios seleccionar productos y gestionar sus compras antes de realizar el pago.
 
--   [ - ] Gestión de inventario: Ayuda a llevar un control de los niveles de existencias de los productos y a actualizar automáticamente cuando se realizan ventas.
+-   [ X ] Gestión de inventario: Ayuda a llevar un control de los niveles de existencias de los productos y a actualizar automáticamente cuando se realizan ventas.
 
 -   [ X ] Sistema de gestión de pedidos: Facilita el seguimiento y la gestión de los pedidos desde la compra hasta la entrega.
 
@@ -65,3 +65,20 @@ Permite una comunicación en tiempo real tanto del cliente al servidor como del 
 
 `Servidor -> Cliente`
 `Cliente -> Servidor`
+
+### Actividad 3
+
+### Como actividad 3 te agrego dificultad para que no te aburras.
+
+-   Gestión de inventario: Ayuda a llevar un control de los niveles de existencias de los productos y a actualizar automáticamente cuando se realizan ventas.
+
+    -   ¿Qué mierda queres que haga?
+        Quiero que cuando vos realizas un carrito puedas mandar un post donde envio un true or false, en caso de ser true la compra vas a eliminar los productos comprados de la base de datos de productos ( No elimines el producto, si no el stock comprado )
+
+-   Aprender como utilizar headers en una petición al servidor. Despues que aprendas esto implementar lo siguiente: A la hora de iniciar sesión en el controlador users devolver un token para identificar al usuario.
+
+Tutorial Token: `https://www.youtube.com/watch?v=btW1SefZf9M&pp=ygUYdG9ja2VuIGRlbCBsYWRvIHNlcnZpZG9y`
+
+-   Aprender socket.io y comunicar a los clientes cuando se crea un nuevo producto.
+
+Tutorial Web Socket: `https://www.youtube.com/watch?v=KE8Hy6YNWYY&t=2273s`
