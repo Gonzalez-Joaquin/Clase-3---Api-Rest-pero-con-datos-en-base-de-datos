@@ -1,16 +1,19 @@
+//import getConnection from "../db/database"
 import { Products } from "../models/products.models"
 
-const esPosibleUtil = (body: any, allProducts: Array<Products>) => {
-    if (!Array.isArray(body)) {
-        const { id, quantity } = body
+const esPosibleUtil = /*async*/ (body: any, allProducts: Array<Products>) => {
 
+    //const connection = await getConnection()
+
+    if (!Array.isArray(body)) {
+        const { id, quantity } = body 
         const product = allProducts.find(product => product.id === id)
 
         if (!product) {
-            return { meessage: 'No se encontró el producto con id ' + id }
+            return { message: 'No se encontró el producto con id ' + id }
         }
-
         if (quantity <= product.stock) {
+            //await connection.query('UPDATE `products` SET stock = stock - ? WHERE id = ?', [quantity, product.id])
             return { price: (product.price * quantity) }
         }
 
@@ -22,17 +25,17 @@ const esPosibleUtil = (body: any, allProducts: Array<Products>) => {
         products: false
     }
 
-    body.map((item: { id: number, quantity: number }) => {
-
+    body.map(async (item: { id: number, quantity: number }) => {
         const product = allProducts.find(product => product.id === item.id)
 
         if (!product) {
-            return { meessage: 'No se encontró el producto con id ' + item.id }
+            return { message: 'No se encontró el producto con id ' + item.id }
         }
-
         if (item.quantity <= product.stock) {
             result.price = result.price + (product.price * item.quantity)
             result.products = true
+
+            //await connection.query('UPDATE `products` SET stock = stock - ? WHERE id = ?', [item.quantity, item.id])
         } else {
             result.products =
                 Array.isArray(result.products)
